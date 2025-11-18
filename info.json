@@ -1,0 +1,10 @@
+{
+  "name": "custom-trigger-technologies",
+  "version": "0.1.0",
+  "title": "Custom Trigger Technologies",
+  "author": "Saniee",
+  "factorio_version": "2.0",
+  "dependencies": [
+    "base >= 2.0"
+  ]
+}
