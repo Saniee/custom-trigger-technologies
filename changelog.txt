@@ -1,11 +1,20 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.1.2
+Date: 2025-11-18
+  Features:
+    - Added mod description.
+  Changes:
+    - Made the setting name, and description more verbose.
+  Bugfixes:
+    - Formated the changelog.txt properly so it displays in game.
+---------------------------------------------------------------------------------------------------
 Version: 0.1.1
-Date: 18.12.2025
+Date: 2025-11-18
   Changes:
     - Added thumbnail.png
 ---------------------------------------------------------------------------------------------------
 Version: 0.1.0
-Date: 18.11.2025
-  Major Features:
+Date: 2025-11-18
+  Features:
 	- Initial release.
 ---------------------------------------------------------------------------------------------------
