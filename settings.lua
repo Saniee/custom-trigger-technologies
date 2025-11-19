@@ -7,9 +7,8 @@ data:extend({
   },
   {
     type = "bool-setting",
-    name = "ctt-space-age-trigger-tech",
+    name ="ctt-vanilla-research-replace",
     setting_type = "startup",
-    default_value = false,
-    hidden = true
+    default_value = true
   }
 })
