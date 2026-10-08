@@ -1,4 +1,16 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.2.0
+Date: 2026-10-08
+  Features:
+    - Added setting to disable the unnecessary second technologies (Oil Gathering, Uranium Mining) and merge them into the main ones.
+    - Added a setting per Space Age planet (Vulcanus, Gleba, Fulgora, Aquilo) that pre-researches its trigger technologies on new saves. They also research the technologies needed to craft the chain's ingredients, and Aquilo includes the other three planets. Only shown when Space Age is loaded.
+  Changes:
+    - Updated for Factorio 2.1.
+    - Fixed spelling in the locale.
+  Bugfixes:
+    - The locale file is now included in the packaged zip.
+    - Starting research no longer errors if a technology is missing.
+---------------------------------------------------------------------------------------------------
 Version: 0.1.2
 Date: 2025-11-18
   Features:

@@ -47,7 +47,6 @@ if (settings.startup["ctt-vanilla-research-before-space-age"].value) then
     }
   end
 
-  -- TODO: Remove unecessary technology after this one.
   local uranium_mining = table.deepcopy(data.raw["technology"]["uranium-mining"])
   local uranium_processing = table.deepcopy(data.raw["technology"]["uranium-processing"])
   uranium_processing.research_trigger = nil
