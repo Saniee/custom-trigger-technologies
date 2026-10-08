@@ -1,25 +1,4 @@
-local planet_chains = {
-  vulcanus = {
-    "calcite-processing", "tungsten-carbide", "foundry", "big-mining-drill", "tungsten-steel", "metallurgic-science-pack",
-    "sulfur-processing", "advanced-material-processing", "automation-2", "concrete", "advanced-oil-processing", "lubricant", "electric-engine", "plastics", "advanced-circuit"
-  },
-  gleba = {
-    "agriculture", "yumako", "jellynut", "biochamber", "artificial-soil", "bioflux", "bacteria-cultivation", "bioflux-processing", "agricultural-science-pack", "heating-tower",
-    "landfill", "advanced-material-processing", "automation-2", "concrete"
-  },
-  fulgora = {
-    "holmium-processing", "electromagnetic-plant", "electromagnetic-science-pack",
-    "production-science-pack", "advanced-electronics-2", "advanced-material-processing", "automation-2", "concrete", "recycling",
-    "sulfur-processing", "battery", "electric-energy-accumulators", "advanced-oil-processing", "plastics", "advanced-circuit"
-  },
-  aquilo = {
-    "lithium-processing", "cryogenic-plant", "cryogenic-science-pack"
-  }
-}
-
-local planet_includes = {
-  aquilo = {"vulcanus", "gleba", "fulgora"}
-}
+local chains = require("chains")
 
 script.on_init(
   function()
@@ -33,16 +12,24 @@ script.on_init(
       end
     end
 
+    local function research_planet(planet)
+      if not settings.startup["ctt-replace-technologies"].value then
+        research(chains.trigger[planet])
+      end
+      research(chains.support[planet])
+      research({"planet-discovery-" .. planet})
+    end
+
     if (settings.startup["ctt-vanilla-research-before-space-age"].value) then
       research({"steam-power", "automation-science-pack", "electronics", "electric-mining-drill", "repair-pack", "radar"})
     end
 
-    for planet, chain in pairs(planet_chains) do
+    for planet in pairs(chains.trigger) do
       local setting = settings.startup["ctt-pre-research-" .. planet]
       if setting and setting.value then
-        research(chain)
-        for _, included in pairs(planet_includes[planet] or {}) do
-          research(planet_chains[included])
+        research_planet(planet)
+        for _, included in pairs(chains.includes[planet] or {}) do
+          research_planet(included)
         end
       end
     end

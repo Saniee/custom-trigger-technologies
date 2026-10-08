@@ -15,7 +15,7 @@ if (settings.startup["ctt-vanilla-research-before-space-age"].value) then
     ingredients = {{"automation-science-pack", 1}, {"logistic-science-pack", 1}},
     time = 30
   }
-  if (settings.startup["ctt-vanilla-research-replace"].value) then
+  if (settings.startup["ctt-replace-technologies"].value) then
     oil_gathering.enabled = false
 
     oil_processing.icon = oil_gathering.icon
@@ -55,7 +55,7 @@ if (settings.startup["ctt-vanilla-research-before-space-age"].value) then
     ingredients = {{"automation-science-pack", 1}, {"logistic-science-pack", 1}, {"chemical-science-pack", 1}},
     time = 30
   }
-  if (settings.startup["ctt-vanilla-research-replace"].value) then
+  if (settings.startup["ctt-replace-technologies"].value) then
     uranium_mining.enabled = false
 
     uranium_processing.effects = {
@@ -79,7 +79,7 @@ if (settings.startup["ctt-vanilla-research-before-space-age"].value) then
 
   data:extend({steel_axe, oil_processing, uranium_processing})
 
-  if (settings.startup["ctt-vanilla-research-replace"].value) then
+  if (settings.startup["ctt-replace-technologies"].value) then
     data:extend({oil_gathering, uranium_mining})
   end
 end

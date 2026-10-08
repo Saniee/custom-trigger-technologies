@@ -7,7 +7,7 @@ data:extend({
   },
   {
     type = "bool-setting",
-    name ="ctt-vanilla-research-replace",
+    name ="ctt-replace-technologies",
     setting_type = "startup",
     default_value = true
   }
